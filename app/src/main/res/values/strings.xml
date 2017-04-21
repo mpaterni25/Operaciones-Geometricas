@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">OperacionesGeometricasTaller</string>
+    <string name="menuPrincipal">Menu Principal</string>
+    <string name="title_activity_cilindro">Cilindro</string>
+    <string name="title_activity_circulo">Circulo</string>
+    <string name="areas">Area</string>
+    <string name="cilindro">Cilindro</string>
+    <string name="radio">Digite Radio</string>
+    <string name="altura">Digite Altura</string>
+    <string name="calcular">Calcular</string>
+    <string name="borrar">Borrar</string>
+    <string name="circulo">Circulo</string>
+    <string name="cono">Cono</string>
+    <string name="valorLados">Digite El Valor Del Lado</string>
+    <string name="esfera">Esfera</string>
+    <string name="rectangulo">Rectangulo</string>
+    <string name="base">Digite Base</string>
+    <string name="triangulo">Triangulo</string>
+    <string name="volumen">Volumen</string>
+</resources>
