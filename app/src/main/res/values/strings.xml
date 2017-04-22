@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">OperacionesGeometricasTaller</string>
+    <string name="app_name">Taller Operaciones Geometricas</string>
     <string name="menuPrincipal">Menu Principal</string>
     <string name="title_activity_cilindro">Cilindro</string>
     <string name="title_activity_circulo">Circulo</string>

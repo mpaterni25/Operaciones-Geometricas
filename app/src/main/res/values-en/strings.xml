@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="altura">Type Height</string>
+    <string name="app_name">Geometric operations workshop</string>
+    <string name="areas">Area</string>
+    <string name="base">Base</string>
+    <string name="borrar">Delete</string>
+    <string name="calcular">Calcaulate</string>
+    <string name="cilindro">Cylinder</string>
+    <string name="circulo">Circle</string>
+    <string name="cono">Cone</string>
+    <string name="cuadrado">Squere</string>
+    <string name="cubo">Cube</string>
+    <string name="datos">Data</string>
+    <string name="esfera">Shepe</string>
+    <string name="menuPrincipal">Main Menu</string>
+    <string name="operacion2">Rectangle Area</string>
+    <string name="numero">N°</string>
+    <string name="operacion">Operation</string>
+    <string name="operacion1">Squere Area</string>
+    <string name="operacion3">Triangle Area</string>
+    <string name="operacion4">Circle Area</string>
+    <string name="operacion5">Shepe Volume</string>
+    <string name="operacion6">Cylinder Volume</string>
+    <string name="operacion7">Cone Vulume</string>
+    <string name="operacion8">Cube Volume</string>
+    <string name="operacionesRealizadas">Operations performed</string>
+    <string name="radio">Enter Radio</string>
+    <string name="rectangulo">Rectangle</string>
+    <string name="resultados">Results</string>
+    <string name="title_activity_cilindro">Cylinder</string>
+    <string name="title_activity_circulo">Circle</string>
+    <string name="triangulo">Triangle</string>
+    <string name="valorLados">Enter The Value of Side</string>
+    <string name="volumen">Volume</string>
+</resources>
