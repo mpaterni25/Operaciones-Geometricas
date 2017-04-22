@@ -23,26 +23,37 @@ public class Cuadrado extends AppCompatActivity {
         context=this;
 
     }
-    public void guardar(View v){
+    public void guardar(View v) {
         String opera, dato, result;
+        if (validar()) {
+            int ladoFinal = Integer.parseInt(lado.getText().toString());
+            opera = res.getString(R.string.operacion1);
+            String str = res.getString(R.string.valorLados);
+            dato = str + "\n " + ladoFinal;
 
-        int ladoFinal = Integer.parseInt(lado.getText().toString());
-        opera = res.getString(R.string.operacion1);
-        String str = res.getString(R.string.valorLados);
-        dato = str+"\n "+ladoFinal;
+            int area = ladoFinal * ladoFinal;
+            result = Integer.toString(area);
 
-        int area = ladoFinal*ladoFinal;
-        result = Integer.toString(area);
+            new AlertDialog.Builder(context).setTitle(opera).setMessage(result).show();
 
-        new AlertDialog.Builder(context).setTitle(opera).setMessage(result).show();
-
-        Operaciones o = new Operaciones(opera, dato, result);
-        o.guardar();
-        borrar(v);
+            Operaciones o = new Operaciones(opera, dato, result);
+            o.guardar();
+            borrar(v);
+        }
     }
-
     public void borrar(View v) {
         lado.setText("");
         lado.requestFocus();
     }
+
+    public boolean validar() {
+        if (lado.getText().toString().isEmpty()) {
+            lado.setError(getResources().getString(R.string.error));
+
+            return false;
+        }
+        return true;
+
+    }
+
 }

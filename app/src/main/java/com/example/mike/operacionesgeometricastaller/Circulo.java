@@ -23,28 +23,38 @@ public class Circulo extends AppCompatActivity {
         context=this;
     }
 
-    public void guardar(View v){
+    public void guardar(View v) {
         String opera, dato, result;
+        if (validar()) {
+            int radioFinal = Integer.parseInt(radio.getText().toString());
+            opera = res.getString(R.string.operacion4);
+            String str = res.getString(R.string.radio);
+            dato = str + "\n " + radioFinal;
 
-        int radioFinal = Integer.parseInt(radio.getText().toString());
-        opera = res.getString(R.string.operacion4);
-        String str = res.getString(R.string.radio);
-        dato = str+"\n "+radioFinal;
+            double area = Math.PI * radioFinal * radioFinal;
+            area = (double) ((int) (area * 100.0) / 100.0);
+            result = Double.toString(area);
 
-        double area = Math.PI*radioFinal*radioFinal;
-        area = (double)((int)(area*100.0)/100.0);
-        result = Double.toString(area);
+            new AlertDialog.Builder(context).setTitle(opera).setMessage(result).show();
 
-        new AlertDialog.Builder(context).setTitle(opera).setMessage(result).show();
-
-        Operaciones o = new Operaciones(opera, dato, result);
-        o.guardar();
-        borrar(v);
+            Operaciones o = new Operaciones(opera, dato, result);
+            o.guardar();
+            borrar(v);
+        }
     }
-
     public void borrar(View v){
         radio.setText("");
         radio.requestFocus();
+    }
+
+    public boolean validar() {
+        if (radio.getText().toString().isEmpty()) {
+            radio.setError(getResources().getString(R.string.error));
+
+            return false;
+        }
+               return true;
+
     }
 
 

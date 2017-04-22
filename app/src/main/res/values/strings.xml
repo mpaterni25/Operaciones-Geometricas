@@ -32,6 +32,7 @@
     <string name="operacion6">Volumen de Cilindro</string>
     <string name="operacion7">Volumen de Cono</string>
     <string name="operacion8">Volumen de Cubo</string>
+    <string name="error">Digite Datos</string>
     <string-array name="lstOpciones">
         <item>@string/areas</item>
         <item>@string/volumen</item>

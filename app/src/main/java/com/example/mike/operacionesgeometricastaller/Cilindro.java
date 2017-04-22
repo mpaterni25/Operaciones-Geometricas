@@ -25,31 +25,47 @@ public class Cilindro extends AppCompatActivity {
         context = this;
     }
 
-    public void guardar(View v){
+    public void guardar(View v) {
         String opera, dato, result;
+        if (validar()) {
+            int radioFinal = Integer.parseInt(radio.getText().toString());
+            int alturaFinal = Integer.parseInt(altura.getText().toString());
+            opera = res.getString(R.string.operacion6);
+            String str = res.getString(R.string.radio);
+            String str2 = res.getString(R.string.altura);
+            dato = str + "\n " + radioFinal + "\n" + str2 + "\n " + alturaFinal;
 
-        int radioFinal = Integer.parseInt(radio.getText().toString());
-        int alturaFinal = Integer.parseInt(altura.getText().toString());
-        opera = res.getString(R.string.operacion6);
-        String str = res.getString(R.string.radio);
-        String str2 = res.getString(R.string.altura);
-        dato = str+"\n "+radioFinal+"\n"+str2+"\n "+alturaFinal;
+            double volumen = Math.PI * radioFinal * radioFinal * alturaFinal;
+            volumen = (double) ((int) (volumen * 100.0) / 100.0);
+            result = Double.toString(volumen);
 
-        double volumen = Math.PI*radioFinal*radioFinal*alturaFinal;
-        volumen = (double)((int)(volumen*100.0)/100.0);
-        result = Double.toString(volumen);
+            new AlertDialog.Builder(context).setTitle(opera).setMessage(result).show();
 
-        new AlertDialog.Builder(context).setTitle(opera).setMessage(result).show();
-
-        Operaciones o = new Operaciones(opera, dato, result);
-        o.guardar();
-        borrar(v);
+            Operaciones o = new Operaciones(opera, dato, result);
+            o.guardar();
+            borrar(v);
+        }
     }
-
     public void borrar(View v){
         radio.setText("");
         altura.setText("");
         radio.requestFocus();
+    }
+
+    public boolean validar() {
+        if (radio.getText().toString().isEmpty()) {
+            radio.setError(getResources().getString(R.string.error));
+
+            return false;
+        }
+        if (altura.getText().toString().isEmpty()) {
+            altura.setError(getResources().getString(R.string.error));
+
+            return false;
+
+        }
+        return true;
+
     }
 
 

@@ -25,30 +25,46 @@ public class Rectangulo extends AppCompatActivity {
         context=this;
     }
 
-    public void guardar(View v){
+    public void guardar(View v) {
         String opera, dato, result;
+        if (validar()) {
+            int baseFinal = Integer.parseInt(base.getText().toString());
+            int alturaFinal = Integer.parseInt(altura.getText().toString());
+            opera = res.getString(R.string.operacion2);
+            String str1 = res.getString(R.string.base) + "\n " + baseFinal;
+            String str2 = res.getString(R.string.altura) + "\n " + alturaFinal;
+            dato = str1 + "\n " + str2;
 
-        int baseFinal = Integer.parseInt(base.getText().toString());
-        int alturaFinal = Integer.parseInt(altura.getText().toString());
-        opera = res.getString(R.string.operacion2);
-        String str1 = res.getString(R.string.base)+"\n "+baseFinal;
-        String str2 = res.getString(R.string.altura)+"\n "+alturaFinal;
-        dato = str1+"\n "+str2;
+            int area = baseFinal * alturaFinal;
+            result = Integer.toString(area);
 
-        int area = baseFinal*alturaFinal;
-        result = Integer.toString(area);
+            new AlertDialog.Builder(context).setTitle(opera).setMessage(result).show();
 
-        new AlertDialog.Builder(context).setTitle(opera).setMessage(result).show();
-
-        Operaciones o = new Operaciones(opera, dato, result);
-        o.guardar();
-        borrar(v);
+            Operaciones o = new Operaciones(opera, dato, result);
+            o.guardar();
+            borrar(v);
+        }
     }
-
     public void borrar(View v){
         base.setText("");
         altura.setText("");
         base.requestFocus();
+    }
+
+    public boolean validar() {
+        if (base.getText().toString().isEmpty()) {
+            base.setError(getResources().getString(R.string.error));
+
+            return false;
+        }
+        if (altura.getText().toString().isEmpty()) {
+            altura.setError(getResources().getString(R.string.error));
+
+            return false;
+
+        }
+        return true;
+
     }
 
 }

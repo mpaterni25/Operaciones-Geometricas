@@ -24,28 +24,38 @@ public class Esfera extends AppCompatActivity {
         context=this;
     }
 
-    public void guardar(View v){
+    public void guardar(View v) {
         String opera, dato, result;
+        if (validar()) {
+            int radioFinal = Integer.parseInt(radio.getText().toString());
+            opera = res.getString(R.string.operacion5);
+            String str = res.getString(R.string.radio);
+            dato = str + "\n " + radioFinal;
 
-        int radioFinal = Integer.parseInt(radio.getText().toString());
-        opera = res.getString(R.string.operacion5);
-        String str = res.getString(R.string.radio);
-        dato = str+"\n "+radioFinal;
+            double volumen = (4 / 3) * Math.PI * radioFinal * radioFinal * radioFinal;
+            volumen = (double) ((int) (volumen * 100.0) / 100.0);
+            result = Double.toString(volumen);
 
-        double volumen = (4/3)*Math.PI*radioFinal*radioFinal*radioFinal;
-        volumen = (double)((int)(volumen*100.0)/100.0);
-        result = Double.toString(volumen);
+            new AlertDialog.Builder(context).setTitle(opera).setMessage(result).show();
 
-        new AlertDialog.Builder(context).setTitle(opera).setMessage(result).show();
-
-        Operaciones o = new Operaciones(opera, dato, result);
-        o.guardar();
-        borrar(v);
+            Operaciones o = new Operaciones(opera, dato, result);
+            o.guardar();
+            borrar(v);
+        }
     }
-
     public void borrar(View v){
         radio.setText("");
         radio.requestFocus();
+    }
+
+    public boolean validar() {
+        if (radio.getText().toString().isEmpty()) {
+            radio.setError(getResources().getString(R.string.error));
+
+            return false;
+        }
+        return true;
+
     }
 
 }

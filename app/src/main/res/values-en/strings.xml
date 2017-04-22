@@ -33,4 +33,5 @@
     <string name="triangulo">Triangle</string>
     <string name="valorLados">Enter The Value of Side</string>
     <string name="volumen">Volume</string>
+    <string name="error">Enter Data</string>
 </resources>
