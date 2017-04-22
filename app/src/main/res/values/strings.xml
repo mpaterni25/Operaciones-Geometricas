@@ -17,4 +17,36 @@
     <string name="base">Digite Base</string>
     <string name="triangulo">Triangulo</string>
     <string name="volumen">Volumen</string>
+    <string name="cubo">Cubo</string>
+    <string name="resultados">Resultados</string>
+    <string name="numero">N°</string>
+    <string name="operacion">Operacion</string>
+    <string name="datos">Datos</string>
+    <string name="cuadrado">Cuadrado</string>
+    <string name="operacionesRealizadas">Operaciones Realizadas</string>
+    <string name="operacion1">Área del Cuadrado</string>
+    <string name="operacion2">Área del Rectángulo</string>
+    <string name="operacion3">Área del Triángulo</string>
+    <string name="operacion4">Área del Circulo</string>
+    <string name="operacion5">Volumen de Esfera</string>
+    <string name="operacion6">Volumen de Cilindro</string>
+    <string name="operacion7">Volumen de Cono</string>
+    <string name="operacion8">Volumen de Cubo</string>
+    <string-array name="lstOpciones">
+        <item>@string/areas</item>
+        <item>@string/volumen</item>
+        <item>@string/operacionesRealizadas</item>
+    </string-array>
+    <string-array name="lstAreas">
+        <item>@string/cuadrado</item>
+        <item>@string/rectangulo</item>
+        <item>@string/triangulo</item>
+        <item>@string/circulo</item>
+    </string-array>
+    <string-array name="lstVolumen">
+        <item>@string/esfera</item>
+        <item>@string/cilindro</item>
+        <item>@string/cono</item>
+        <item>@string/cubo</item>
+    </string-array>
 </resources>

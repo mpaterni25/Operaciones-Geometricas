@@ -27,7 +27,7 @@
         <activity android:name=".Operaciones" />
         <activity android:name=".Resultados" />
         <activity android:name=".Volumen" />
-        <activity android:name=".Ciruclo" />
+        <activity android:name=".Circulo" />
         <activity android:name=".Cilindro"></activity>
     </application>
 

@@ -8,32 +8,32 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-public class Cubo extends AppCompatActivity {
+public class Circulo extends AppCompatActivity {
 
-    private EditText arista;
+    private EditText radio;
     private Resources res;
     private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cubo);
-
+        setContentView(R.layout.activity_circulo);
         res=this.getResources();
-        arista=(EditText)findViewById(R.id.txtCuboLad);
+        radio=(EditText)findViewById(R.id.txtRadCir);
         context=this;
     }
+
     public void guardar(View v){
         String opera, dato, result;
 
-        int aristaFinal = Integer.parseInt(arista.getText().toString());
-        opera = res.getString(R.string.operacion8);
-        String str = res.getString(R.string.valorLados);
-        dato = str+"\n "+aristaFinal;
+        int radioFinal = Integer.parseInt(radio.getText().toString());
+        opera = res.getString(R.string.operacion4);
+        String str = res.getString(R.string.radio);
+        dato = str+"\n "+radioFinal;
 
-        double volumen = (aristaFinal*aristaFinal*aristaFinal);
-        volumen = (double)((int)(volumen*100.0)/100.0);
-        result = Double.toString(volumen);
+        double area = Math.PI*radioFinal*radioFinal;
+        area = (double)((int)(area*100.0)/100.0);
+        result = Double.toString(area);
 
         new AlertDialog.Builder(context).setTitle(opera).setMessage(result).show();
 
@@ -43,8 +43,9 @@ public class Cubo extends AppCompatActivity {
     }
 
     public void borrar(View v){
-        arista.setText("");
-        arista.requestFocus();
+        radio.setText("");
+        radio.requestFocus();
     }
+
 
 }
